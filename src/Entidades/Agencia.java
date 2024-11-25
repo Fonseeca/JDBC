@@ -1,27 +1,25 @@
-package src.Entidades.Cliente;
+package src.Entidades;
 
-import java.util.List;
-
-public class Banco {
+public class Agencia {
 
     /* Atributos */
     final private int codigo;
     private String nome;
     private String endereco;
-    private List<Cliente> clientes;
+    private Banco banco;
 
     /**
-     * Construtor de Banco.
-     * @param codigo Código do banco.
-     * @param nome Nome do banco.
-     * @param endereco Endereço do banco.
-     * @param clientes Lista de clientes do banco.
+     * Construtor de Agencia.
+     * @param codigo Código da agência.
+     * @param nome Nome da agência.
+     * @param endereco Endereço da agência.
+     * @param banco Banco ao qual a agência pertence.
      */
-    public Banco(int codigo, String nome, String endereco, List<Cliente> clientes) {
+    public Agencia(int codigo, String nome, String endereco, Banco banco) {
         this.codigo = codigo;
         this.nome = nome;
         this.endereco = endereco;
-        this.clientes = clientes;
+        this.banco = banco;
     }
 
     /* Getters e setters */
@@ -45,26 +43,26 @@ public class Banco {
         this.endereco = endereco;
     }
 
-    public List<Cliente> getClientes() {
-        return this.clientes;
+    public Banco getBanco() {
+        return this.banco;
     }
 
-    public void setClientes(List<Cliente> clientes) {
-        this.clientes = clientes;
+    public void setBanco(Banco banco) {
+        this.banco = banco;
     }
 
     /**
-     * Método sobreescrito que transforma um banco em uma representação 
+     * Método sobreescrito que transforma uma agência em uma representação 
      * de texto com todos seus dados.
-     * @return Representação do banco em texto.
+     * @return Representação da agência em texto.
      */
     @Override
     public String toString() {
-        return "Banco{" +
+        return "Agencia{" +
                 "codigo=" + this.codigo + ", " + 
                 "nome='" + this.nome + "'" + ", " + 
-                "endereco='" + this.endereco + "'" + ", " + 
-                "clientes=" + this.clientes + 
+                "endereco='" + this.endereco + "'" + ", " +
+                "banco=" + this.banco +
                 '}';
     }
 }
